@@ -1,9 +1,9 @@
 package com.rubenskj.mongo.sharded.configuration;
 
-import com.rubenskj.mongo.sharded.persistence.PlayerRepositoryImpl;
-import io.quarkus.arc.DefaultBean;
+import com.rubenskj.config.bean.DocumentCodecBean;
+import io.quarkus.runtime.StartupEvent;
 
-import javax.enterprise.context.Dependent;
+import javax.enterprise.event.Observes;
 
 //@Dependent
 public class AppConfig {
@@ -14,4 +14,10 @@ public class AppConfig {
 //    public PlayerRepositoryImpl playerRepository() {
 //        return new PlayerRepositoryImpl();
 //    }
+
+    void startup(@Observes StartupEvent event) {
+        DocumentCodecBean documentCodecBean = new DocumentCodecBean();
+
+        documentCodecBean.createAllDocumentCodec();
+    }
 }

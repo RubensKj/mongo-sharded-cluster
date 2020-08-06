@@ -23,6 +23,7 @@ public class PlayerService {
         Player player = this.createPlayerFromDTO(playerDTO);
 
         LOGGER.info("Saving player");
+        LOGGER.info("Saving player");
 
         return playerRepository.save(player);
     }

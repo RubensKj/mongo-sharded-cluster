@@ -11,6 +11,7 @@ public class MongoConfig {
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
+        System.out.println("tes");
         return "hello";
     }
 }
