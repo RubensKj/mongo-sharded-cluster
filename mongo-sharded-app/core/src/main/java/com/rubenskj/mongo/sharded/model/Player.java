@@ -1,15 +1,10 @@
 package com.rubenskj.mongo.sharded.model;
 
-import com.rubenskj.config.annotation.Id;
-import com.rubenskj.config.annotation.MongoConfigured;
-
 import java.time.LocalDateTime;
 import java.util.List;
 
-@MongoConfigured
 public class Player {
 
-    @Id
     private String id;
     private String name;
     private int age;
