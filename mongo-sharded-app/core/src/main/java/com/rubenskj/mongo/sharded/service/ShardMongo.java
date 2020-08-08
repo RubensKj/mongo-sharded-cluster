@@ -17,7 +17,7 @@ import java.util.UUID;
 public class ShardMongo {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ShardMongo.class);
-    private static final int NUMBER_OF_TIMES = 1;
+    private static final int NUMBER_OF_TIMES = 100000;
 
     @Inject
     PlayerService playerService;
