@@ -1,4 +1,4 @@
-package com.rubenskj.config.configuration;
+package com.rubenskj.config.aspect;
 
 import com.rubenskj.config.interfaces.ExecuteWithReturn;
 import com.rubenskj.config.interfaces.IMongoHandlerOperation;
@@ -23,6 +23,7 @@ public class MongoConfiguration {
     @Around("target(com.mongodb.internal.operation.Operations) || this(com.mongodb.internal.operation.Operations)")
     public Object executeMongoOperations(ProceedingJoinPoint joinPoint) throws Throwable {
         LOGGER.info("Handling Mongo Operation..");
+        System.out.println("To Aquiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
         return this.IMongoHandlerOperation.execute((ExecuteWithReturn<Object>) joinPoint.proceed());
     }
 }

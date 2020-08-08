@@ -1,6 +1,6 @@
 package com.rubenskj.mongo.sharded.configuration;
 
-import com.rubenskj.config.configuration.MongoConfiguration;
+import com.rubenskj.config.aspect.MongoConfiguration;
 import io.quarkus.runtime.StartupEvent;
 
 import javax.enterprise.event.Observes;
