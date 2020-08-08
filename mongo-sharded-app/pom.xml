@@ -13,7 +13,7 @@
 
     <modules>
         <module>core</module>
-        <module>mongo-config</module>
+        <module>mongo-config-core</module>
     </modules>
 
 </project>

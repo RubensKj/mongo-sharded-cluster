@@ -1,3 +1,0 @@
-src.includes = src/main/aspect,\
-               src/main/java/com/mycompany/myaspects/**/*
-src.excludes = src/main/java/org/codehaus/mojo/aspectj/Azpect.java

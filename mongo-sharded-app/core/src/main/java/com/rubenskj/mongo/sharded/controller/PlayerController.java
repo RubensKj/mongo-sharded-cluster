@@ -2,12 +2,10 @@ package com.rubenskj.mongo.sharded.controller;
 
 import com.rubenskj.mongo.sharded.dto.PlayerDTO;
 import com.rubenskj.mongo.sharded.service.PlayerService;
+import com.rubenskj.mongo.sharded.service.Test;
 
 import javax.inject.Inject;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 @Path("/player")
@@ -18,8 +16,16 @@ public class PlayerController {
     @Inject
     PlayerService playerService;
 
+    @Inject
+    Test test;
+
     @POST
     public PlayerDTO add(PlayerDTO playerDTO) {
         return PlayerDTO.of(this.playerService.add(playerDTO));
+    }
+
+    @GET
+    public void ex() throws InterruptedException {
+        this.test.serve();
     }
 }
