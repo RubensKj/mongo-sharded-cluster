@@ -2,4 +2,6 @@
 
 > Mongo VM Configuration
 
-<p>How to configure a VM to deploy a mongo sharded cluster</p>
+<p>Configuring a VM to deploy a mongo sharded cluster</p>
+
+### 🚀 Getting started

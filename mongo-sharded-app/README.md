@@ -2,7 +2,7 @@
 
 <p>This application is used to test the mongo cluster</p>
 
-### Getting Started
+### 🚀 Getting Started
 
 In order to run this application, you should generate the jar by using:
 
