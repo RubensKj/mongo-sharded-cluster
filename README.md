@@ -9,6 +9,8 @@
 - [Mongo Sharded App](./mongo-sharded-app)
 - [Configuring a VM](./vm-config)
 
+---
+
 ### 🚀 Getting Started 
 
 Working on it..

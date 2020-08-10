@@ -1,6 +1,10 @@
-# Mongo Sharded Cluster App
+# 🌁🌀 Mongo Sharded Cluster App
+
+> Application to test the cluster
 
 <p>This application is used to test the mongo cluster</p>
+
+---
 
 ### 🚀 Getting Started
 
