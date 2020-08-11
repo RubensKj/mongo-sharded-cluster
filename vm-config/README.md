@@ -8,4 +8,49 @@
 
 ### 🚀 Getting started
 
+This section is how to deploy a mongo sharded cluster. From configuring a VM to Mongo Cluster Shard.
+
+#### :cloud: Configuring a Virtual Machine
+
+First of all, you should select an ISO to create a VM on HyperV. By the way, we're going to use HyperV to create a VM.
+
+For this tutorial I'm gonna use Ubuntu ISO, where can be found in [Ubuntu Website Download](https://ubuntu.com/download/server).
+
+:open_file_folder: Opening HyperV
+
+<p align="center">
+  <img src="../.github/hyperv-opening.png" alt="Opening HyperV" width="625px">
+</p>
+
+Then go to `New` > `Virtual Machine`
+
+It'll open a creation page, so click next, on `Specify Name and Location`, use a name for the VM that you are configuring. For the Mongo Sharded Cluster, we're going to need 10 VM, that is
+
+##### :clipboard: What's going to need
+
+3 Config VM
+
+with the name like
+
+- VM-Config-`number`
+
+3 VM to compose a Shard
+
+- VM-Shard-One-`number`
+
+and more 3 VM to compose the another Shard
+
+- VM-Shard-Two-`number`
+
+
+The name is you choice so, you decide, but I prefer to use those ones.
+
+# 
+
+On `Installation Options` select `Install an operating system from bootable CD/DVD-ROM` and click `Image file (.iso):` then select your ISO that you downloaded before.
+
+<p align="center">
+  <img src="../.github/creating_by_iso.png" alt="Creating VM by ISO" width="625px">
+</p>
+
 🚧 Working on it 🚧
