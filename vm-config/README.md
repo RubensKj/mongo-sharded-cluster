@@ -18,8 +18,8 @@ For this tutorial I'm gonna use Ubuntu ISO, where can be found in [Ubuntu Websit
 
 :open_file_folder: Opening HyperV
 
-<p align="center">
-  <img src="../.github/hyperv-opening.png" alt="Opening HyperV" width="625px">
+<p align="left">
+  <img src="../.github/hyperv-opening.png" alt="Opening HyperV" width="725px">
 </p>
 
 Then go to `New` > `Virtual Machine`
@@ -47,10 +47,22 @@ The name is you choice so, you decide, but I prefer to use those ones.
 
 # 
 
+#### :dart: Don't forget the configure the Network
+
+On `Configure Networking` select your external `virtual switch`.
+
+In case you don't know how to create a virtual switch, check the [docs in Microsoft Website Documentation](https://docs.microsoft.com/en-us/windows-server/virtualization/hyper-v/get-started/create-a-virtual-switch-for-hyper-v-virtual-machines) 
+
+# 
+
+#### :electric_plug: Creating by .iso
+
 On `Installation Options` select `Install an operating system from bootable CD/DVD-ROM` and click `Image file (.iso):` then select your ISO that you downloaded before.
 
-<p align="center">
-  <img src="../.github/creating_by_iso.png" alt="Creating VM by ISO" width="625px">
+<p align="left">
+  <img src="../.github/creating_by_iso.png" alt="Creating VM by ISO" width="975px">
 </p>
+
+# 
 
 🚧 Working on it 🚧
