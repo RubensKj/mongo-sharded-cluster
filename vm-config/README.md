@@ -48,6 +48,10 @@ and more 3 VM to compose the another `Shard`
 
 - VM-Shard-Two-`number`
 
+and the last one for the router
+
+- VM-Router
+
 
 The name is you choice so, you decide, but I prefer to use those ones.
 
