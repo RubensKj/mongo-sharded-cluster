@@ -63,7 +63,7 @@ In case you don't know how to create a virtual switch, check the [docs in Micros
 
 #### :electric_plug: Creating by .iso
 
-On `Installation Options` select `Install an operating system from bootable CD/DVD-ROM` and click `Image file (.iso):` then select your ISO that you [downloaded before](/:cloud:_configuring_a_virtual_machine).
+On `Installation Options` select `Install an operating system from bootable CD/DVD-ROM` and click `Image file (.iso):` then select your ISO that you [downloaded before](#cloud-configuring-a-virtual-machine).
 
 <p align="left">
   <img src="../.github/creating_by_iso.png" alt="Creating VM by ISO" width="975px">
