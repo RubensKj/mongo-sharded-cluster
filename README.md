@@ -13,5 +13,8 @@
 
 ### 🚀 Getting Started 
 
+In case you need to configure the VM, go to [VM Configuration](/vm-config).
+
+In this repo we provide a app created in Java Spring Boot, that test the Mongo Cluster that we're going to create. [Go to Mongo Sharded App](/mongo-sharded-app)
 
 🚧 Working on it 🚧

@@ -40,11 +40,11 @@ with the name like
 
 - VM-Config-`number`
 
-3 VM to compose a Shard
+3 VM to compose a `Shard`
 
 - VM-Shard-One-`number`
 
-and more 3 VM to compose the another Shard
+and more 3 VM to compose the another `Shard`
 
 - VM-Shard-Two-`number`
 
@@ -70,5 +70,7 @@ On `Installation Options` select `Install an operating system from bootable CD/D
 </p>
 
 # 
+
+#### :bookmark: Turning the first time VM on
 
 🚧 Working on it 🚧
