@@ -44,7 +44,7 @@ with the name like
 
 - VM-Shard-One-`number`
 
-and more 3 VM to compose the another `Shard`
+and 3 more VM to compose the another `Shard`
 
 - VM-Shard-Two-`number`
 
