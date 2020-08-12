@@ -26,7 +26,7 @@ For this tutorial I'm gonna use Ubuntu ISO, where can be found in [Ubuntu Websit
 
 Then go to `New` > `Virtual Machine`
 
-It'll open a creation page, so click next, on `Specify Name and Location`, use a name for the VM that you are configuring. For the Mongo Sharded Cluster, we're going to need 10 VM, that is
+It'll open a creation page, so click next, on `Specify Name and Location`, use a name for the VM that you are configuring. For the Mongo Sharded Cluster, we're going to need 10 VM.
 
 # 
 
