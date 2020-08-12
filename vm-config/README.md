@@ -53,7 +53,7 @@ and the last one for the router
 - VM-Router
 
 
-The name is you choice so, you decide, but I prefer to use those ones.
+The name is your choice so, you decide, but I prefer to use those ones.
 
 # 
 
