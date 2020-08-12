@@ -57,7 +57,7 @@ The name is your choice so, you decide, but I prefer to use those ones.
 
 # 
 
-#### :dart: Don't forget the configure the Network
+#### :dart: Don't forget to configure the Network
 
 On `Configure Networking` select your external `virtual switch`.
 
