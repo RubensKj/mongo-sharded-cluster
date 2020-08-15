@@ -26,7 +26,7 @@ For this tutorial I'm gonna use Ubuntu ISO, where can be found in [Ubuntu Websit
 
 Then go to `New` > `Virtual Machine`
 
-It'll open a creation page, so click next, on `Specify Name and Location`, use a name for the VM that you are configuring. For the Mongo Sharded Cluster, we're going to need 10 VM, that is
+It'll open a creation page, so click next, on `Specify Name and Location`, use a name for the VM that you are configuring. For the Mongo Sharded Cluster, we're going to need 10 VM.
 
 # 
 
@@ -44,7 +44,7 @@ with the name like
 
 - VM-Shard-One-`number`
 
-and more 3 VM to compose the another `Shard`
+and 3 more VM to compose the other `Shard`
 
 - VM-Shard-Two-`number`
 
@@ -53,11 +53,11 @@ and the last one for the router
 - VM-Router
 
 
-The name is you choice so, you decide, but I prefer to use those ones.
+The name is your choice so, you decide, but I prefer to use those ones.
 
 # 
 
-#### :dart: Don't forget the configure the Network
+#### :dart: Don't forget to configure the Network
 
 On `Configure Networking` select your external `virtual switch`.
 

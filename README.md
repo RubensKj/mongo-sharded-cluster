@@ -1,4 +1,4 @@
-# 🐳 Mongo Sharded Cluster
+# 🍃 Mongo Sharded Cluster
 
 > MongoDB is so cool
 
