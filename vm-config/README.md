@@ -79,4 +79,33 @@ On `Installation Options` select `Install an operating system from bootable CD/D
 
 After installing the Ubuntu that we have selected before, you'll need to configure some things to get root access.
 
+In order to get root access, you should set a password by reaching
+
+```console
+sudo passwd root
+```
+
+and then set the new password. Then let's access our root user, using 
+
+```console
+su root
+```
+
+# 
+
+
+After getting root, we should change the the `PermitRootLogin` to `yes` and uncomment the field too, to connect as a root from initial login.
+
+To do this, you should use
+
+```console
+vim /etc/ssh/sshd_config
+```
+
+change the fields, and then restart the sshd service by 
+
+```console
+systemctl restart sshd.service
+```
+
 🚧 Working on it 🚧
