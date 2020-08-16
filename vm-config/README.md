@@ -77,4 +77,6 @@ On `Installation Options` select `Install an operating system from bootable CD/D
 
 #### :bookmark: Turning the first time VM on
 
+After installing the Ubuntu that we have selected before, you'll need to configure some things to get root access.
+
 🚧 Working on it 🚧
