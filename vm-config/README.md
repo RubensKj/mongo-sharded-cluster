@@ -108,6 +108,6 @@ change the fields, and then restart the sshd service by
 systemctl restart sshd.service
 ```
 
-Restarting the service, will be able to access root with your new password, in case you want to access by ssh, you can type `ifconfig` in order to get your ip from vm. In case you receive a error on type command, use `apt-get nettools` to install the necessary dependencies.
+Restarting the service, will be able to access root with your new password, in case you want to access by ssh, you can type `ifconfig` in order to get your ip from vm. In case you receive an error on it, use `apt-get nettools` to install the necessary dependencies.
 
 🚧 Working on it 🚧
