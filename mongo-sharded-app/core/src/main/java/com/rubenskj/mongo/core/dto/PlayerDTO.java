@@ -1,6 +1,6 @@
-package com.rubenskj.mongo.sharded.dto;
+package com.rubenskj.mongo.core.dto;
 
-import com.rubenskj.mongo.sharded.model.Player;
+import com.rubenskj.mongo.core.model.Player;
 
 import java.util.List;
 

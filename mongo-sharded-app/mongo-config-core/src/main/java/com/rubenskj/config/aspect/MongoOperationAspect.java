@@ -1,24 +1,29 @@
 package com.rubenskj.config.aspect;
 
+import com.rubenskj.config.contract.MongoOperations;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
+import org.springframework.core.Ordered;
 import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-public class MongoOperationAspect {
+public class MongoOperationAspect implements Ordered {
 
-    @Around("target(com.mongodb.internal.operation.AsyncOperations) || this(com.mongodb.internal.operation.AsyncOperations)")
-    public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
-        long start = System.currentTimeMillis();
+    private final MongoOperations mongoOperations;
 
-        Object proceed = joinPoint.proceed();
+    public MongoOperationAspect(MongoOperations mongoOperations) {
+        this.mongoOperations = mongoOperations;
+    }
 
-        long executionTime = System.currentTimeMillis() - start;
+    @Around("target(org.springframework.data.mongodb.core.MongoOperations) || this(org.springframework.data.mongodb.core.MongoOperations)")
+    public Object processDocumentsToDataSource(ProceedingJoinPoint joinPoint) throws InterruptedException {
+        return this.mongoOperations.execute(joinPoint);
+    }
 
-        System.out.println(joinPoint.getSignature() + " executed in " + executionTime + "ms");
-        return proceed;
+    @Override
+    public int getOrder() {
+        return Ordered.HIGHEST_PRECEDENCE;
     }
 }

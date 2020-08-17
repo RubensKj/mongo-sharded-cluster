@@ -1,21 +1,22 @@
-package com.rubenskj.mongo.sharded.service;
+package com.rubenskj.mongo.core.service;
 
-import com.rubenskj.mongo.sharded.dto.PlayerDTO;
-import com.rubenskj.mongo.sharded.model.Player;
-import com.rubenskj.mongo.sharded.repository.IPlayerRepository;
+import com.rubenskj.mongo.core.dto.PlayerDTO;
+import com.rubenskj.mongo.core.model.Player;
+import com.rubenskj.mongo.core.repository.IPlayerRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-
-@ApplicationScoped
+@Service
 public class PlayerService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(PlayerService.class);
 
-    @Inject
-    IPlayerRepository playerRepository;
+    private final IPlayerRepository playerRepository;
+
+    public PlayerService(IPlayerRepository playerRepository) {
+        this.playerRepository = playerRepository;
+    }
 
     public Player add(PlayerDTO playerDTO) {
         LOGGER.debug("PlayerDTO: {}", playerDTO);
@@ -24,7 +25,7 @@ public class PlayerService {
 
         LOGGER.info("Saving player");
 
-        return playerRepository.save(player);
+        return this.playerRepository.save(player);
     }
 
     private Player createPlayerFromDTO(PlayerDTO playerDTO) {

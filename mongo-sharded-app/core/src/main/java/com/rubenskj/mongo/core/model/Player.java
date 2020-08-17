@@ -1,10 +1,15 @@
-package com.rubenskj.mongo.sharded.model;
+package com.rubenskj.mongo.core.model;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Document
 public class Player {
 
+    @Id
     private String id;
     private String name;
     private int age;

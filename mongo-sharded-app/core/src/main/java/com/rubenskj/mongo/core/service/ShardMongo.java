@@ -1,30 +1,35 @@
-package com.rubenskj.mongo.sharded.service;
+package com.rubenskj.mongo.core.service;
 
-import com.rubenskj.mongo.sharded.dto.PlayerDTO;
-import com.rubenskj.mongo.sharded.model.Player;
+import com.rubenskj.mongo.core.dto.PlayerDTO;
+import com.rubenskj.mongo.core.model.Player;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 import java.util.UUID;
 
-@ApplicationScoped
+@Service
 public class ShardMongo {
-
     private static final Logger LOGGER = LoggerFactory.getLogger(ShardMongo.class);
-    private static final int NUMBER_OF_TIMES = 100000;
 
-    @Inject
-    PlayerService playerService;
+    private final PlayerService playerService;
 
-    public void startTestShard() {
+    public ShardMongo(PlayerService playerService) {
+        this.playerService = playerService;
+    }
 
-        for (int i = 0; i < NUMBER_OF_TIMES; i++) {
+    public void startTestShard(Long numberOfTimes) {
+
+        if (numberOfTimes == null) {
+            LOGGER.info("Number of times is null, so setting to 10000.");
+            numberOfTimes = 10000L;
+        }
+
+        for (int i = 0; i < numberOfTimes; i++) {
 
             PlayerDTO playerDTO = this.createPlayerDTO();
 
