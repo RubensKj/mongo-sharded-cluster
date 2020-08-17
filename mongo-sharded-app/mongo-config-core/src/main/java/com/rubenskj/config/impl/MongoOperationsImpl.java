@@ -10,7 +10,7 @@ public class MongoOperationsImpl implements MongoOperations {
     private volatile int times = 0;
 
     @Override
-    public Object execute(ProceedingJoinPoint joinPoint) throws InterruptedException {
+    public Object execute(ProceedingJoinPoint joinPoint) throws Throwable {
         try {
             return joinPoint.proceed();
         } catch (Throwable e) {
@@ -20,7 +20,7 @@ public class MongoOperationsImpl implements MongoOperations {
             if (times <= 3) {
                 return execute(joinPoint);
             } else {
-                return null;
+                throw e;
             }
         }
     }
