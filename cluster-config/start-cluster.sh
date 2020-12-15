@@ -13,4 +13,4 @@ sleep 4
 echo "Executing default configuration"
 docker-compose exec shard-1 mongo admin --eval "rs.initiate({ _id: \"cluster-rs-1\", members: [{_id: 0, host: \"shard-1:27017\"}, {_id: 1, host: \"shard-2:27017\"}, {_id: 2, host: \"shard-3:27017\", arbiterOnly: true} ]});"
 docker-compose exec shard-1 mongo admin --eval "var testdb = db.getSiblingDB('test');testdb.createCollection('test');"
-docker-compose exec shard-1 mongo admin --eval "use admin; var testdb = db.getSiblingDB('test'); testdb.createUser({ user: 'test', pwd: 'password', roles: [{ role: 'root', db: 'admin' }, { role: 'dbOwner', db: 'test' }]}); testdb.getUsers();"
+docker-compose exec shard-1 mongo admin --eval "var testdb = db.getSiblingDB('test');testdb.createUser({ user: 'test', pwd: 'password', roles: [{ role: 'root', db: 'admin' }, { role: 'dbOwner', db: 'test' }]});testdb.getUsers();"
