@@ -18,7 +18,7 @@ public class MongoOperationAspect implements Ordered {
     }
 
     @Around("target(org.springframework.data.mongodb.core.MongoOperations) || this(org.springframework.data.mongodb.core.MongoOperations)")
-    public Object processDocumentsToDataSource(ProceedingJoinPoint joinPoint) throws InterruptedException {
+    public Object processDocumentsToDataSource(ProceedingJoinPoint joinPoint) throws Throwable {
         return this.mongoOperations.execute(joinPoint);
     }
 
