@@ -1,0 +1,1 @@
+rs.initiate({ _id: "cluster-rs-1", members: [{_id: 0, host: "shard-1:27017"}, {_id: 1, host: "shard-2:27017"}, {_id: 2, host: "shard-3:27017", arbiterOnly: true} ]});

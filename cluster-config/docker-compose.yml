@@ -1,52 +1,51 @@
+version: '3.7'
+
 services:
-  config:
-    image: mongo
-    volumes:
-      - ./docker/mongo/etc/mongod-keyfile:/etc/mongod-keyfile:ro
-      - ./docker/mongo/root:/root:ro
-    entrypoint: [ "chmod", "400", "/etc/mongod-keyfile"]
   shard-1:
-    hostname: shard-3
-    image: mongo
+    hostname: shard-1
+    container_name: cluster_shard-1
+    image: mongo:latest
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: password
       MONGO_INITDB_DATABASE: admin
     expose:
       - 27017
-    volumes:
-      - ./docker/mongo/etc/mongod-keyfile:/etc/mongod-keyfile:ro
-      - ./docker/mongo/root:/root:ro
-    entrypoint: [ "/usr/bin/mongod", "--auth", "--keyFile", "/etc/mongod-keyfile", "--bind_ip_all", "--replSet", "cluster-rs-1" ]
     ports:
-      - "27017:27017"
+      - 27017:27017
+    volumes:
+      - ./docker/mongo/root:/root
+      - ./docker/mongo/etc/mongod-keyfile:/etc/mongod-keyfile:ro
+    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "cluster-rs-1" ]
     depends_on:
       - shard-2
       - shard-3
   shard-2:
     hostname: shard-2
-    image: mongo
+    container_name: cluster_shard-2
+    image: mongo:latest
     expose:
       - 27017
     ports:
       - "27018:27017"
     volumes:
       - ./docker/mongo/etc/mongod-keyfile:/etc/mongod-keyfile:ro
-    entrypoint: [ "/usr/bin/mongod", "--auth", "--keyFile", "/etc/mongod-keyfile", "--bind_ip_all", "--replSet", "cluster-rs-1" ]
+    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "cluster-rs-1" ]
     depends_on:
       - shard-3
   shard-3:
     hostname: shard-3
-    image: mongo
+    container_name: cluster_shard-3
+    image: mongo:latest
     expose:
       - 27017
     ports:
       - "27019:27017"
     volumes:
       - ./docker/mongo/etc/mongod-keyfile:/etc/mongod-keyfile:ro
-    entrypoint: [ "/usr/bin/mongod", "--auth", "--keyFile", "/etc/mongod-keyfile", "--bind_ip_all", "--replSet", "cluster-rs-1" ]
+    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "cluster-rs-1" ]
   mongo-express:
-    container_name: gogqlserver_mongo_express
+    container_name: cluster_mongo_express
     image: mongo-express:0.49.0
     restart: unless-stopped
     ports:
